@@ -14,9 +14,9 @@ class ProductsTable
     {
         return $table
             ->columns([
-                TextColumn::make('id'),
-                TextColumn::make('name'),
-                TextColumn::make('unit_price'),
+                TextColumn::make('id')->label('ID'),
+                TextColumn::make('name')->label('Nome'),
+                TextColumn::make('unit_price')->label('Preço Unitário'),
             ])
             ->filters([
                 //

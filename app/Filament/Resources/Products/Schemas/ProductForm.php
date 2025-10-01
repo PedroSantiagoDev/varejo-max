@@ -15,10 +15,10 @@ class ProductForm
                     ->label('ID')
                     ->required(),
                 TextInput::make('name')
-                    ->label('Name')
+                    ->label('Nome')
                     ->required(),
                 TextInput::make('unit_price')
-                    ->label('Unit Price')
+                    ->label('Preço Unitário')
                     ->numeric()
                     ->required(),
             ]);

@@ -14,8 +14,8 @@ class ClientsTable
     {
         return $table
             ->columns([
-                TextColumn::make('id'),
-                TextColumn::make('name'),
+                TextColumn::make('id')->label('ID'),
+                TextColumn::make('name')->label('Nome'),
             ])
             ->filters([
                 //

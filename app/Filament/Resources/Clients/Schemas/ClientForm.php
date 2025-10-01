@@ -15,7 +15,7 @@ class ClientForm
                     ->label('ID')
                     ->required(),
                 TextInput::make('name')
-                    ->label('Name')
+                    ->label('Nome')
                     ->required(),
             ]);
     }

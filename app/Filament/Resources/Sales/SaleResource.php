@@ -18,7 +18,9 @@ class SaleResource extends Resource
 {
     protected static ?string $model = Sale::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static ?string $navigationLabel = 'Vendas';
+
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-shopping-cart';
 
     public static function form(Schema $schema): Schema
     {

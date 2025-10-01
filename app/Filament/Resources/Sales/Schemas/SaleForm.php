@@ -17,19 +17,19 @@ class SaleForm
                     ->label('ID')
                     ->required(),
                 Select::make('product_id')
-                    ->label('Product')
+                    ->label('Produto')
                     ->relationship('product', 'name')
                     ->required(),
                 Select::make('client_id')
-                    ->label('Client')
+                    ->label('Cliente')
                     ->relationship('client', 'name')
                     ->required(),
                 TextInput::make('quantity')
-                    ->label('Quantity')
+                    ->label('Quantidade')
                     ->numeric()
                     ->required(),
                 DateTimePicker::make('sale_date')
-                    ->label('Sale Date')
+                    ->label('Data da Venda')
                     ->required(),
             ]);
     }
