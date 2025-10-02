@@ -20,6 +20,8 @@ class ClientResource extends Resource
 
     protected static ?string $navigationLabel = 'Clientes';
 
+    protected static ?string $label = 'Cliente';
+
     protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-users';
 
     public static function form(Schema $schema): Schema

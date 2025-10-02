@@ -20,6 +20,8 @@ class SaleResource extends Resource
 
     protected static ?string $navigationLabel = 'Vendas';
 
+    protected static ?string $label = 'Venda';
+
     protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-shopping-cart';
 
     public static function form(Schema $schema): Schema
