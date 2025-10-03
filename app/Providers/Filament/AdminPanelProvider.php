@@ -31,6 +31,7 @@ class AdminPanelProvider extends PanelProvider
             ->brandName('Varejo Max')
             ->brandLogo('/assets/images/logo.png')
             ->brandLogoHeight('60px')
+            ->topNavigation()
             ->colors([
                 'primary' => Color::Red,
                 'danger'  => Color::Red,

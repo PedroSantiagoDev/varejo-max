@@ -1,0 +1,1 @@
+web: php artisan migrate --force && php artisan storage:link && php artisan config:cache && (php artisan queue:work --daemon --tries=3 --timeout=90 &)
