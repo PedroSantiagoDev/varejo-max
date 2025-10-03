@@ -29,24 +29,21 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->brandName('Varejo Max')
+            ->brandLogo('/assets/images/logo.png')
+            ->brandLogoHeight('60px')
             ->colors([
-                'danger' => Color::Rose,
-                'gray' => Color::Gray,
-                'info' => Color::Blue,
                 'primary' => Color::Red,
+                'danger'  => Color::Red,
+                'gray'    => Color::Gray,
+                'info'    => Color::Blue,
                 'success' => Color::Emerald,
                 'warning' => Color::Orange,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
-            ->pages([
-                Dashboard::class,
-            ])
+            ->pages([])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
-            ->widgets([
-                AccountWidget::class,
-                FilamentInfoWidget::class,
-            ])
+            ->widgets([])
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
