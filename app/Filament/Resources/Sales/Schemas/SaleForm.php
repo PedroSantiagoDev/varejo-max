@@ -13,9 +13,6 @@ class SaleForm
     {
         return $schema
             ->components([
-                TextInput::make('id')
-                    ->label('ID')
-                    ->required(),
                 Select::make('product_id')
                     ->label('Produto')
                     ->relationship('product', 'name')
