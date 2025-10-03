@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Client;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,10 @@ class SaleFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'product_id' => Product::factory(),
+            'client_id' => Client::factory(),
+            'quantity' => $this->faker->numberBetween(1, 100),
+            'sale_date' => $this->faker->dateTimeThisYear(),
         ];
     }
 }

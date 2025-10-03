@@ -17,7 +17,8 @@ class ClientFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'id' => $this->faker->unique()->numberBetween(1000, 9999),
+            'name' => $this->faker->name(),
         ];
     }
 }

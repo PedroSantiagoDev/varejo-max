@@ -17,12 +17,13 @@ class ImportSalesAction
             ->form([
                 FileUpload::make('attachment')
                     ->label('Arquivo de Vendas (.dat)')
+                    ->disk('local')
                     ->required(),
             ])
             ->action(function (array $data) {
                 $temporaryPath = $data['attachment'];
                 $permanentPath = 'imports/'.basename($temporaryPath);
-                Storage::move($temporaryPath, $permanentPath);
+                Storage::disk('local')->move($temporaryPath, $permanentPath);
 
                 ImportSalesFile::dispatch($permanentPath, auth()->user());
 

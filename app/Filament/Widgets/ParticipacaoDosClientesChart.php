@@ -13,6 +13,8 @@ class ParticipacaoDosClientesChart extends ChartWidget
 
     protected ?string $heading = 'Participação dos Clientes';
 
+    protected ?string $maxHeight = '280px';
+
     protected function getData(): array
     {
         $salesData = Sale::query()
@@ -29,8 +31,8 @@ class ParticipacaoDosClientesChart extends ChartWidget
         $topClients = $salesData->take(5);
         $otherClientsRevenue = $salesData->skip(5)->sum('total_revenue');
 
-        $labels = $topClients->map(fn ($item) => $item->client_name)->toArray();
-        $data = $topClients->map(fn ($item) => $item->total_revenue)->toArray();
+        $labels = $topClients->map(fn($item) => $item->client_name)->toArray();
+        $data = $topClients->map(fn($item) => $item->total_revenue)->toArray();
 
         if ($otherClientsRevenue > 0) {
             $labels[] = 'Outros';

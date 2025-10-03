@@ -13,6 +13,8 @@ class CurvaAbcChart extends ChartWidget
 
     protected ?string $heading = 'Curva ABC de Produtos';
 
+    protected ?string $maxHeight = '280px';
+
     protected function getData(): array
     {
         $salesData = Sale::query()
@@ -23,10 +25,11 @@ class CurvaAbcChart extends ChartWidget
             )
             ->groupBy('products.name')
             ->orderByDesc('total_revenue')
+            ->limit(6)
             ->get();
 
-        $labels = $salesData->map(fn ($item) => $item->product_name);
-        $data = $salesData->map(fn ($item) => $item->total_revenue);
+        $labels = $salesData->map(fn($item) => $item->product_name);
+        $data = $salesData->map(fn($item) => $item->total_revenue);
 
         return [
             'datasets' => [
